@@ -121,6 +121,18 @@ sub remove {
    splice_heap_idx @{$self->{heap}}, $node->[1];
 }
 
+=item $pq->weight($item)
+
+Returns the weight of the item, or undef if it is not present.
+
+=cut
+
+sub weight {
+   my ($self, $item) = @_;
+   my $node = $self->{items}{$item} or return;
+   return $node->[0];
+}
+
 =item $pq->size()
 
 Returns the number of items in the priority queue.

@@ -2,7 +2,7 @@
 
 # t/mpq.t - check module loading and basic operation
 
-use Test::More tests => 18;
+use Test::More tests => 21;
 
 BEGIN { use_ok( 'Array::Heap::ModifiablePriorityQueue' ); }
 
@@ -14,9 +14,12 @@ $pq->add('a', 1);
 $pq->add('b', 2);
 is($pq->size(), 2, 'add');
 is($pq->peek(), 'a', 'peek');
+is($pq->weight('b'), 2, 'weight');
 $pq->add('b', 0);
 is($pq->size(), 2, 'modify');
+is($pq->weight('b'), 0, 'modified weight');
 is($pq->get(), 'b', 'get modified');
+is($pq->weight('b'), undef, 'removed weight');
 is($pq->size(), 1, 'size');
 $pq->remove('c');
 is($pq->size(), 1, 'remove nonexistent');

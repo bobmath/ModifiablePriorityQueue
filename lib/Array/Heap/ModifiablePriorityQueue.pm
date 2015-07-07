@@ -225,6 +225,10 @@ change, you may need to use Array::Heap directly.
 
 Bob Mathews <bobmathews@alumni.calpoly.edu>
 
+=head1 REPOSITORY
+
+L<https://github.com/bobmath/ModifiablePriorityQueue>
+
 =head1 COPYRIGHT
 
 This program is free software; you can redistribute

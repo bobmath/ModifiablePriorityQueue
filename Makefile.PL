@@ -10,4 +10,14 @@ WriteMakefile(
                      'Test::Simple' => 0.44,
                      'Array::Heap' => 3.0,
                     },
+    (eval { ExtUtils::MakeMaker->VERSION(6.46) } ? (
+    META_MERGE => {
+        'meta-spec' => { version => 2 },
+         resources => {
+             repository => {
+                 type => 'git',
+                 url  => 'https://github.com/bobmath/ModifiablePriorityQueue.git',
+                 web  => 'https://github.com/bobmath/ModifiablePriorityQueue',
+             },
+         }}) : ()),
 );

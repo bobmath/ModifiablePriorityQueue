@@ -212,26 +212,24 @@ are all quite short and simple.
 
 =head1 LIMITATIONS
 
-=over 4
-
-=item *
-
 Weight values must be numeric. This is a limitation of the underlying
 Array::Heap module.
 
-=item *
-
 Weights are sorted in increasing order only. If you want it the other way,
 use the negative of the weights you have.
-
-=item *
 
 Items are distinguished by their stringified values. This works fine if you
 are storing scalars or plain references. If your items have a custom
 stringifier that returns nonunique strings, or their stringified value can
 change, you may need to use Array::Heap directly.
 
-=back
+=head1 SEE ALSO
+
+L<Heap> for a different priority queue implementation.
+
+L<Heap::Simple> is easy to use, but doesn't allow weights to be changed.
+
+L<Array::Heap> if you need more direct access to the data structure.
 
 =head1 AUTHOR
 

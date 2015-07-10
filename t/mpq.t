@@ -2,7 +2,7 @@
 
 # t/mpq.t - check module loading and basic operation
 
-use Test::More tests => 21;
+use Test::More tests => 23;
 
 BEGIN { use_ok( 'Array::Heap::ModifiablePriorityQueue' ); }
 
@@ -44,4 +44,11 @@ $pq->restore_order();
 is($pq->get(), 'b', 'get modified');
 is($pq->get(), 'a', 'get last');
 is($pq->size(), 0, 'empty');
+
+$pq = Array::Heap::ModifiablePriorityQueue->new();
+$pq->add('a', 3);
+$pq->add('b', 2);
+$pq->add('c', 1);
+is(join(' ', sort $pq->items()), 'a b c', 'items');
+is(join(' ', $pq->sorted_items()), 'c b a', 'sorted items');
 

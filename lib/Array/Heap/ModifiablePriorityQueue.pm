@@ -144,6 +144,28 @@ sub size {
    return scalar @{$self->{heap}};
 }
 
+=item $pq->items()
+
+Returns all items in the heap, in an arbitrary order.
+
+=cut
+
+sub items {
+   my ($self) = @_;
+   return map { $_->[2] } @{$self->{heap}};
+}
+
+=item $pq->sorted_items()
+
+Returns all items in the heap, in weight order.
+
+=cut
+
+sub sorted_items {
+   my ($self) = @_;
+   return map { $_->[2] } sort { $a->[0] <=> $b->[0] } @{$self->{heap}};
+}
+
 =item $pq->add_unordered($item, $weight)
 
 Add an item to the priority queue or change its weight, without updating

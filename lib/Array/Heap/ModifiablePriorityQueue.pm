@@ -133,6 +133,18 @@ sub weight {
    return $node->[0];
 }
 
+=item $pq->min_weight($item)
+
+Returns the minimum weight from the queue, or undef if empty.
+
+=cut
+
+sub min_weight {
+   my ($self) = @_;
+   my $node = $self->{heap}[0] or return;
+   return $node->[0];
+}
+
 =item $pq->size()
 
 Returns the number of items in the priority queue.

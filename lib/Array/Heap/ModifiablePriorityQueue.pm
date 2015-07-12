@@ -223,8 +223,9 @@ sub restore_order {
 
 =head1 PERFORMANCE
 
-The peek function runs in constant time, or O(1) in asymptotic notation.
-The structure-modifying functions add, get, and remove run in O(log n) time.
+The peek and weight functions run in constant time, or O(1) in asymptotic
+notation. The structure-modifying functions add, get, and remove run in
+O(log n) time. The items function is O(n), and sorted_items is O(n log n).
 Add_unordered and remove_unordered are O(1), but after a sequence of
 unordered operations, you need to call restore_order, which is O(n).
 

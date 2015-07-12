@@ -2,7 +2,7 @@
 
 # t/mpq.t - check module loading and basic operation
 
-use Test::More tests => 24;
+use Test::More tests => 25;
 
 BEGIN { use_ok( 'Array::Heap::ModifiablePriorityQueue' ); }
 
@@ -26,6 +26,7 @@ $pq->remove('c');
 is($pq->size(), 1, 'remove nonexistent');
 $pq->remove('a');
 is($pq->size(), 0, 'remove last');
+is($pq->get(), undef, 'empty');
 
 $pq = Array::Heap::ModifiablePriorityQueue->new();
 $pq->add_unordered('a', 1);

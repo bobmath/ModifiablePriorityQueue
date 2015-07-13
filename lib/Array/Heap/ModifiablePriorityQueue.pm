@@ -241,6 +241,9 @@ O(log n) time. The items function is O(n), and sorted_items is O(n log n).
 Add_unordered and remove_unordered are O(1), but after a sequence of
 unordered operations, you need to call restore_order, which is O(n).
 
+If you don't need the modifiable features of this module, consider using
+L<Array::Heap::PriorityQueue::Numeric> instead.
+
 If you feel that you need maximum speed, go ahead and inline these
 methods into your own code to avoid an extra method invocation. They
 are all quite short and simple.

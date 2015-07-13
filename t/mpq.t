@@ -1,11 +1,9 @@
 # -*- perl -*-
-
-# t/mpq.t - check module loading and basic operation
+# t/mpq.t - Check ::ModifiablePriorityQueue
 
 use Test::More tests => 25;
 
-BEGIN { use_ok( 'Array::Heap::ModifiablePriorityQueue' ); }
-
+BEGIN { use_ok('Array::Heap::ModifiablePriorityQueue'); }
 my $pq = Array::Heap::ModifiablePriorityQueue->new();
 isa_ok($pq, 'Array::Heap::ModifiablePriorityQueue');
 

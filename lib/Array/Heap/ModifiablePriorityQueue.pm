@@ -2,7 +2,7 @@ package Array::Heap::ModifiablePriorityQueue;
 use strict;
 use warnings;
 use vars qw( $VERSION );
-$VERSION = '1.01';
+$VERSION = '1.10';
 use Array::Heap qw( adjust_heap_idx make_heap_idx pop_heap_idx push_heap_idx
    splice_heap_idx );
 

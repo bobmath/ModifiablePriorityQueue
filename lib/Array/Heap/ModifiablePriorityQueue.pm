@@ -269,6 +269,12 @@ L<Heap::Simple> is easy to use, but doesn't allow weights to be changed.
 
 L<Array::Heap> if you need more direct access to the data structure.
 
+L<Array::Heap::PriorityQueue::Compare>,
+L<Array::Heap::PriorityQueue::Numeric>, and
+L<Array::Heap::PriorityQueue::String>
+provide support for different types of weight values,
+but do not support modifying weights in the queue.
+
 =head1 AUTHOR
 
 Bob Mathews <bobmathews@alumni.calpoly.edu>

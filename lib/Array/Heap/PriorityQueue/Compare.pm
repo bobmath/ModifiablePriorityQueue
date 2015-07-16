@@ -85,6 +85,7 @@ Add an item to the priority queue.
 
 sub add {
    my ($self, $item) = @_;
+   # &Array::Heap::push_heap_cmp($self->{cmp}, $self->{heap}, $item);
    $self->{push}->($self->{cmp}, $self->{heap}, $item);
 }
 
@@ -123,6 +124,7 @@ break ties.
 
 sub get {
    my ($self) = @_;
+   # return &Array::Heap::pop_heap_cmp($self->{cmp}, $self->{heap});
    return $self->{pop}->($self->{cmp}, $self->{heap});
 }
 
@@ -156,6 +158,7 @@ Returns all items in the heap, in weight order.
 
 sub sorted_items {
    my ($self) = @_;
+   # my $cmp = $self->{cmp}; return sort $cmp @{$self->{heap}};
    return $self->{sort}->($self->{cmp}, $self->{heap});
 }
 
@@ -181,6 +184,7 @@ before calling any of the ordered methods (add, peek, or get).
 
 sub restore_order {
    my ($self) = @_;
+   # &Array::Heap::make_heap_cmp($self->{cmp}, $self->{heap});
    $self->{make}->($self->{cmp}, $self->{heap});
 }
 
